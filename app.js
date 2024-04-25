@@ -14,6 +14,7 @@ console.log('hey')
     var dbo = db.db("library");
 	  var collection = dbo.collection('books');
     console.log("Success!");
+	  res.write('connected');
 	  db.close();
   }//end else
 });//end connect
