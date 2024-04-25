@@ -13,15 +13,6 @@ const port = process.env.PORT || 3000;
       var dbo = db.db("library");
       var collection = dbo.collection('books');
       
-      collection.findOne({}, function(err, result) {
-        if (err) {
-          console.log(err);
-          res.end();
-        } else {
-          res.write(JSON.stringify(result));
-          db.close();
-          res.end(); 
-        }
       });
     }
   });
