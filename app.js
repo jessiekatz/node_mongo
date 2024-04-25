@@ -15,7 +15,7 @@ http.createServer(function (req, res) {
   MongoClient.connect(connStr, function(err, db) {
     if (err) {
       console.log(err);
-      res.end(); // End response if there's an error
+      res.end(); 
     } else {
       var dbo = db.db("library");
       var collection = dbo.collection('books');
@@ -23,11 +23,11 @@ http.createServer(function (req, res) {
       collection.findOne({}, function(err, result) {
         if (err) {
           console.log(err);
-          res.end(); // End response if there's an error
+          res.end();
         } else {
-          res.write(JSON.stringify(result)); // Assuming result is a JSON object
+          res.write(JSON.stringify(result));
           db.close();
-          res.end(); // End response after sending data
+          res.end(); 
         }
       });
     }
