@@ -6,18 +6,19 @@ http.createServer(function (req, res) {
 const MongoClient = require('mongodb').MongoClient;
 const connStr= "mongodb+srv://newuser:1234@mycluster.brnb7re.mongodb.net/?retryWrites=true&w=majority"
 	  
-console.log('hey')
+console.log('before connect')
   MongoClient.connect(connStr, function(err, db) {
 	console.log('after connect')
+	  console.log("error: "+err);
     
-  if(err) { console.log(err); }
-  else {
-    var dbo = db.db("library");
-	  var collection = dbo.collection('books');
-    console.log("Success!");
+  // if(err) { console.log(err); }
+  // else {
+  //   var dbo = db.db("library");
+	 //  var collection = dbo.collection('books');
+  //   console.log("Success!");
 	//  res.write('connected');
 	 // db.close();
-  }//end else
+//  }//end else
 });//end connect
 	res.end();
 }).listen(port);
