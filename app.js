@@ -1,5 +1,5 @@
 const MongoClient = require('mongodb').MongoClient;
-const connStr= "mongodb+srv://newuser:1234@cluster0.rjmq5.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+const connStr= "mongodb+srv://newuser:1234@mycluster.brnb7re.mongodb.net/?retryWrites=true&w=majority"
 	  
 console.log('hey')
   MongoClient.connect(connStr, function(err, db) {
