@@ -14,7 +14,7 @@ http.createServer(function (req, res) {
   else {
 	  var dbo = db.db("library");
 	  var collection = dbo.collection('books');
-	  console.log("Success!");
+	  res.write(collection.findOne());
 	  db.close();
     }
   });
